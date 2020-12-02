@@ -11,9 +11,10 @@ body {
     font-size: 1.5em;
     float: right;
   }
-#test_status {
-    flo
+#quiz_status {
+    text-align: center;
 }
-#test [
+#quiz {
+    text-align: center;
 
-]
+}
