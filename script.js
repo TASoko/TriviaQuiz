@@ -21,23 +21,17 @@ var questions = [
     },
   {
       question: "What are the advantages of JavaScript?",
-      a: "Less server interaction",
-      b: "Immediate feedback to the visitors",
-      c: "All of the above",
+      choices: ["Less server interaction",  "Immediate feedback to the visitors", "All of the above"],
       answer: "C"
     },
   {
       question: "In how many ways a JavaScript code can be involved in an HTML file?",
-      a: "1",
-      b: "3",
-      c: "4",
+      choices: ["1", "3", "4"],
       answer: "B"
     },
   {
       question: "The statement (Provide more details on an element like id, type, value etc.) is the definition of what JS term?",
-      a: "Attribute",
-      b: "Property",
-      c: "Element",
+      choices: ["Attribute", "Property", "Element"],
       answer: "A"
     }
 ];
@@ -48,36 +42,10 @@ var lastQuestionIndex = questions.length - 1;
 //}
 //alert(" You got " + score + " / " + questions.length);
 
-var button = document
-.createElement("button");
+var button = document.createElement("button");
 button.setAttribute("class", "answers")
 
 //<button class="answers" data-answer="A">Yes</button>
-
-var fruits = {
-  apple: 28,
-  orange: 17,
-  pear: 54,
-}
-
-
-//const keys = Object.keys(fruits)
-//for (const key of keys) {
-  //console.log(key)
-//}
-
-//const keys = Object.keys(questions)
-//for (const key of keys) {
-  //console.log(key)
-//}
-var entries = Object.entries(questions)
-console.log(entries)
-
-const keys = Object.keys(questions)
-console.log(keys)
-
-const object = { 1: "Is JavaScript a case-sensitive language?" , 2: "What are the advantages of JavaScript?", 3: "In how many ways a JavaScript code can be involved in an HTML file?" };
-
 
 
 
