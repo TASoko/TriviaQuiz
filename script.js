@@ -4,7 +4,8 @@ var secondsDisplay = document.querySelector("#seconds");
 var testspace = document.querySelector("#test");
 var timeleft = 60;
 var Btn = document.querySelectorAll(".answers");
-var answerBtn = document.querySelectorAll("data-answer");
+var answerBtn = document.querySelectorAll(".data-answer");
+var submitBtn = document.querySelector(".submit");
 
 
 console.log("This should be the start button element", startBtn);
@@ -55,24 +56,36 @@ var questions = [
 ];
 
 
+
+function Results() {
 var lastQuestionIndex = questions.length - 1;
 
+var selectedanswer;
 
-//alert(" You got " + score + " / " + questions.length);
+//for (var i = 0; i < questions.length; i++){
+//selectedanswer = questions[i].choices[questions[i].selectedIndex].value;
 
-//var button = document.createElement("button");
-//button.setAttribute("class", "answers")
+  //if (selectedanswer === Btn) {
+  //score++;
+ // }
+//}
 
-//<button class="answers" data-answer="A">Yes</button>
+  alert(" You got " + score + " / " + questions.length);
+  //var button = document.createElement("button");
+  //button.setAttribute("class", "answers")
 
+  //<button class="answers" data-answer="A">Yes</button>
+};
+
+//Button Clicks [Verified Don't Touch]
 function buttonClick() {
- alert ("It works")
+  alert("It works")
 };
 
 
 
 
-//Timer
+//Timer [Verified Don't Touch]
 
 function startQuiz() {
   console.log("Is this working?");
@@ -90,22 +103,11 @@ function startQuiz() {
 
   function createAnswers() {
     var q = questions[currentQuestionIndex]
-    for (var i = 0; i < q.choices.length; i++){
-   Btn[i].textContent = q.choices[i]
-     }
-  }
-}
-
-
-function checkAnswers() {
-  console.log("Is this working too?");
-  choices = document.getElementsByClassName("answers");
-  for (var i = 0; i < choices.length; i++) {
-    if (choices[i].checked) {
-      choice = choices[i].value;
+    for (var i = 0; i < q.choices.length; i++) {
+      Btn[i].textContent = q.choices[i]
     }
   }
-
+}
 
 
   //for (var i = 0; i < questions.length; i++) {
@@ -117,7 +119,6 @@ function checkAnswers() {
   //alert("Wrong!");
   //}
   // }
-}
 
 //document.getElementsByClassName("answers").addEventListener("click", displayDate);
 
@@ -146,8 +147,9 @@ startBtn.addEventListener("click", startQuiz);
 //answerButtons.addEventListener("click", checkAnswer);
 //Btn.addEventListener("click", buttonClick);
 
-for (var i = 0; i < Btn.length; i++){
+for (var i = 0; i < Btn.length; i++) {
   Btn[i].addEventListener("click", buttonClick)
-
-  Btn[i].textContent
+  var q = questions[currentQuestionIndex]
+  Btn[i].textContent = q.choices[i]
 }
+submitBtn.addEventListener("click", Results);
