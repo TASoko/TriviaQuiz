@@ -3,8 +3,8 @@ var startBtn = document.getElementById("start-button");
 var secondsDisplay = document.querySelector("#seconds");
 var testspace = document.querySelector("#test");
 var timeleft = 60;
-var Btn = document.querySelector(".answers");
-var answerBtn = document.querySelector("data-answer");
+var Btn = document.querySelectorAll(".answers");
+var answerBtn = document.querySelectorAll("data-answer");
 
 
 console.log("This should be the start button element", startBtn);
@@ -66,8 +66,7 @@ var lastQuestionIndex = questions.length - 1;
 //<button class="answers" data-answer="A">Yes</button>
 
 function buttonClick() {
-  alert ("It works");
-  console.log("It worked");
+ alert ("It works")
 };
 
 
@@ -77,6 +76,7 @@ function buttonClick() {
 
 function startQuiz() {
   console.log("Is this working?");
+  createAnswers()
   var downloadTimer = setInterval(function () {
     if (timeleft <= 0) {
       clearInterval(downloadTimer);
@@ -87,6 +87,13 @@ function startQuiz() {
     }
     timeleft -= 1;
   }, 1000);
+
+  function createAnswers() {
+    var q = questions[currentQuestionIndex]
+    for (var i = 0; i < q.choices.length; i++){
+   Btn[i].textContent = q.choices[i]
+     }
+  }
 }
 
 
@@ -98,6 +105,8 @@ function checkAnswers() {
       choice = choices[i].value;
     }
   }
+
+
 
   //for (var i = 0; i < questions.length; i++) {
   //var result = window.questions.answer;
@@ -135,4 +144,10 @@ function checkAnswers() {
 
 startBtn.addEventListener("click", startQuiz);
 //answerButtons.addEventListener("click", checkAnswer);
-Btn.addEventListener("click", buttonClick);
+//Btn.addEventListener("click", buttonClick);
+
+for (var i = 0; i < Btn.length; i++){
+  Btn[i].addEventListener("click", buttonClick)
+
+  Btn[i].textContent
+}
