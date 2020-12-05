@@ -93,7 +93,7 @@ function Results() {
 
   function startQuiz() {
     console.log("Is this working?");
-    createAnswers()
+    //createAnswers()
     var downloadTimer = setInterval(function () {
       if (timeleft <= 0) {
         clearInterval(downloadTimer);
@@ -107,14 +107,14 @@ function Results() {
 
   
   }
-  function createAnswers() {
-    console.log("the create answers works");
-    var q = questions[currentQuestionIndex]
-    for (var i = 0; i < q.choices.length; i++) {
-      answerBtn,q.choices[i]
-      Btn[i].textContent = q.choices[i]
-    }
-  }
+  //function createAnswers() {
+    //console.log("the create answers works");
+    //var q = question[currentQuestionIndex]
+    //for (var i = 0; i < q.choices.length; i++) {
+      //answerBtn, q.choices[i]
+      //Btn[i].textContent = q.choices[i]
+    //}
+  //}
 
   //for (var i = 0; i < questions.length; i++) {
   //var result = window.questions.answer;
@@ -150,7 +150,7 @@ function Results() {
   //grab the value of their initials and their score and save it to local storage
 
   startBtn.addEventListener("click", startQuiz);
-  startBtn.addEventListener("click", createAnswers);
+  //startBtn.addEventListener("click", createAnswers);
   //answerButtons.addEventListener("click", checkAnswer);
   //Btn.addEventListener("click", buttonClick);
 
